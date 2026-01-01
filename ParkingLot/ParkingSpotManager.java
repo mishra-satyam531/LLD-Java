@@ -37,6 +37,11 @@ public class ParkingSpotManager {
         }
     }
 
+    public void parkVehicle(ParkingSpot spot, Vehicle vehicle) {
+        spot.parkVehicle(vehicle);
+        System.out.println("Vehicle parked at spop id: " + spot.id);
+    }
+
     public void removeVehicle(Vehicle vehicle) {
         for(ParkingSpot spot : list) {
             if(!spot.isEmpty && spot.getVehicle().equals(vehicle)) {

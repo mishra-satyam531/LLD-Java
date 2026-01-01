@@ -1,12 +1,12 @@
-package ParkingLot;
+package ParkingLot2;
 
-public abstract class ParkingSpot {
+public class ParkingSpot {
     int id;
-    boolean isEmpty;
     Vehicle vehicle;
+    boolean isEmpty;
     int price;
 
-    public ParkingSpot(int id, int price) {
+    ParkingSpot(int id,int  price) {
         this.id = id;
         this.price = price;
         this.isEmpty = true;
