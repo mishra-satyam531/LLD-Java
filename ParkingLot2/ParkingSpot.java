@@ -6,7 +6,7 @@ public class ParkingSpot {
     boolean isEmpty;
     int price;
 
-    ParkingSpot(int id,int  price) {
+    ParkingSpot(int id, int price) {
         this.id = id;
         this.price = price;
         this.isEmpty = true;

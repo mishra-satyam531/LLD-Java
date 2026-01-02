@@ -25,15 +25,4 @@ public class ParkingSpotManager {
         }
         return null;
     }
-
-    public void parkVehicle(Vehicle vehicle) {
-        ParkingSpot spot = findParkingSpot();
-
-        if(spot == null) {
-            System.out.println("No Empty spot");
-        } else {
-            spot.parkVehicle(vehicle);
-            System.out.println("Vehicle is parked at id " + spot.id);
-        }
-    }
 }
