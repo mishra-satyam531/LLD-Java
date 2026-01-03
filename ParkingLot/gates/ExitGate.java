@@ -15,7 +15,7 @@ public class ExitGate {
 
         System.out.println("Total price for parking is: " + costComputation.price(ticket));
 
-        ticket.getSpot().removeVehicle(ticket.getVehicle());
+        ticket.getSpot().removeVehicle();
 
         System.out.println("Vehicle Removed. Spot " + ticket.getSpot().getId() + " is now free.");
     }

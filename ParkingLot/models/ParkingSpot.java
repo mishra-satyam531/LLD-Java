@@ -17,7 +17,7 @@ public class ParkingSpot {
         this.isEmpty = false;
     }
 
-    public void removeVehicle(Vehicle vehicle) {
+    public void removeVehicle() {
         this.vehicle = null;
         this.isEmpty = true;
     }
