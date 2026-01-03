@@ -1,4 +1,4 @@
-package ParkingLot2;
+package ParkingLot.models;
 
 public class Car extends Vehicle{
     public Car(int licenseNumber) {

@@ -1,4 +1,6 @@
-package ParkingLot2;
+package ParkingLot.strategies;
+
+import ParkingLot.models.Ticket;
 
 public class FourWheelerCostComputation implements CostComputation {
 
@@ -11,7 +13,7 @@ public class FourWheelerCostComputation implements CostComputation {
         
         double minutes = Math.ceil(durationInMillis / (1000.0 * 60.0));
 
-        int hourlyRate = ticket.spot.price; 
+        int hourlyRate = ticket.getSpot().getPrice(); 
         
         double cost = (minutes * hourlyRate) / 60.0;
 

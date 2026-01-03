@@ -1,7 +1,14 @@
-package ParkingLot2;
+package ParkingLot.factories;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ParkingLot.managers.ParkingSpotManager;
+import ParkingLot.models.FourWheelerParkingSpot;
+import ParkingLot.models.ParkingSpot;
+import ParkingLot.models.TwoWheelerParkingSpot;
+import ParkingLot.models.Vehicle;
+import ParkingLot.models.VehicleType;
 
 public class ParkingSpotManagerFactory {
     public ParkingSpotManager getParkingManager(Vehicle vehicle, List<ParkingSpot> allSpots) {

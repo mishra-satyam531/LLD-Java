@@ -1,6 +1,12 @@
-package ParkingLot2;
+package ParkingLot.gates;
 
 import java.util.List;
+
+import ParkingLot.factories.ParkingSpotManagerFactory;
+import ParkingLot.managers.ParkingSpotManager;
+import ParkingLot.models.ParkingSpot;
+import ParkingLot.models.Ticket;
+import ParkingLot.models.Vehicle;
 
 public class EntryGate {
     ParkingSpotManagerFactory factory;

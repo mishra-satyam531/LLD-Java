@@ -1,4 +1,4 @@
-package ParkingLot2;
+package ParkingLot.models;
 
 public class TwoWheelerParkingSpot extends ParkingSpot {
     public TwoWheelerParkingSpot(int id) {

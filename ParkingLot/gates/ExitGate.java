@@ -1,4 +1,8 @@
-package ParkingLot2;
+package ParkingLot.gates;
+
+import ParkingLot.factories.CostComputationFactory;
+import ParkingLot.models.Ticket;
+import ParkingLot.strategies.CostComputation;
 
 public class ExitGate {
     CostComputationFactory factory;
@@ -11,8 +15,8 @@ public class ExitGate {
 
         System.out.println("Total price for parking is: " + costComputation.price(ticket));
 
-        ticket.spot.removeVehicle(ticket.vehicle);
+        ticket.getSpot().removeVehicle(ticket.getVehicle());
 
-        System.out.println("Vehicle Removed. Spot " + ticket.spot.id + " is now free.");
+        System.out.println("Vehicle Removed. Spot " + ticket.getSpot().getId() + " is now free.");
     }
 }

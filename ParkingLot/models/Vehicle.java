@@ -1,4 +1,4 @@
-package ParkingLot2;
+package ParkingLot.models;
 
 public abstract class Vehicle {
     int licenseNumber;

@@ -1,10 +1,10 @@
-package ParkingLot2;
+package ParkingLot.models;
 
 public class Ticket {
-    int id;
-    long entryTime;
-    Vehicle vehicle;
-    ParkingSpot spot;
+    private int id;
+    private long entryTime;
+    private Vehicle vehicle;
+    private ParkingSpot spot;
 
     public Ticket(int id, long entryTime, Vehicle vehicle, ParkingSpot spot) {
         this.id = id;
@@ -15,5 +15,13 @@ public class Ticket {
 
     public long getEntryTime() {
         return this.entryTime;
+    }
+
+    public Vehicle getVehicle() {
+        return this.vehicle;
+    }
+
+    public ParkingSpot getSpot() {
+        return this.spot;
     }
 }

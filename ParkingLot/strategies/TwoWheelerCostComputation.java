@@ -1,4 +1,6 @@
-package ParkingLot2;
+package ParkingLot.strategies;
+
+import ParkingLot.models.Ticket;
 
 public class TwoWheelerCostComputation implements CostComputation {
 
@@ -15,7 +17,7 @@ public class TwoWheelerCostComputation implements CostComputation {
             hours = Math.ceil(hours);
         }
 
-        int cost = (int)(hours * ticket.spot.price);
+        int cost = (int)(hours * ticket.getSpot().getPrice());
         return cost;
     }
     

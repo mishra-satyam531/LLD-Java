@@ -1,6 +1,8 @@
-package ParkingLot2;
+package ParkingLot.managers;
 
 import java.util.List;
+
+import ParkingLot.models.ParkingSpot;
 
 public class ParkingSpotManager {
     List<ParkingSpot> list;
@@ -19,7 +21,7 @@ public class ParkingSpotManager {
 
     public ParkingSpot findParkingSpot() {
         for(ParkingSpot spot : list) {
-            if(spot.isEmpty) {
+            if(spot.isEmpty()) {
                 return spot;
             }
         }

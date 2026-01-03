@@ -1,10 +1,10 @@
-package ParkingLot2;
+package ParkingLot.models;
 
 public class ParkingSpot {
-    int id;
-    Vehicle vehicle;
-    boolean isEmpty;
-    int price;
+    private int id;
+    private Vehicle vehicle;
+    private boolean isEmpty;
+    private int price;
 
     ParkingSpot(int id, int price) {
         this.id = id;
@@ -24,5 +24,17 @@ public class ParkingSpot {
 
     public Vehicle getVehicle() {
         return this.vehicle;
+    }
+
+    public int getPrice() {
+        return this.price;
+    }
+
+    public boolean isEmpty() {
+        return this.isEmpty;
+    }
+
+    public int getId() {
+        return this.id;
     }
 }
