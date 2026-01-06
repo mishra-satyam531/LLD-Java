@@ -6,9 +6,12 @@ public class ElevatorCar {
     private int id;
     int currentFloor;
     Direction direction;
-    ElevatorState state;
+    public ElevatorState state;
     TreeSet<Integer> upStops;
     TreeSet<Integer> downStops;
+
+    ElevatorDisplay display = new ElevatorDisplay();
+    ElevatorDoor door = new ElevatorDoor();
 
     public ElevatorCar(int id) {
         this.id = id;
@@ -20,8 +23,6 @@ public class ElevatorCar {
     }
 
     public void addStop(int floor) {
-        if(floor == currentFloor) return;
-
         if(floor > currentFloor) {
             upStops.add(floor);
         } else {
@@ -50,6 +51,9 @@ public class ElevatorCar {
                 int nextFloor = upStops.pollFirst();
                 this.currentFloor = nextFloor;
                 System.out.println("Moving UP to floor: " + currentFloor);
+
+                door.openDoor();
+                door.closeDoor();
             } else {
                 this.direction = Direction.DOWN;
             }
@@ -58,10 +62,15 @@ public class ElevatorCar {
                 int nextFloor = downStops.pollLast();
                 this.currentFloor = nextFloor;
                 System.out.println("Moving DOWN to floor: " + currentFloor);
+
+                door.openDoor();
+                door.closeDoor();
             } else {
                 this.direction = Direction.UP;
             }
         }
+
+        display.setDisplay(currentFloor, direction);
     }
 
     public int getId() {

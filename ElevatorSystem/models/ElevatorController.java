@@ -1,67 +1,50 @@
 package ElevatorSystem.models;
 
-import java.util.List;
-
 public class ElevatorController {
-    private List<ElevatorCar> elevatorList;
+    public ElevatorCar elevatorCar;
 
-    public ElevatorController(List<ElevatorCar> elevatorList) {
-        this.elevatorList = elevatorList;
+    public ElevatorController(ElevatorCar elevatorCar) {
+        this.elevatorCar = elevatorCar;
     }
 
     public void submitExternalRequest(int floor, Direction direction) {
-        ElevatorCar optimalElevatorCar = null;
-        int minCost = Integer.MAX_VALUE;
-
-        for(ElevatorCar elevator : elevatorList) {
-            int cost = calculateCost(elevator, floor, direction);
-
-            if(cost < minCost) {
-                optimalElevatorCar = elevator;
-                minCost = cost;
-            }
-        }
-
-        if(optimalElevatorCar != null) {
-            System.out.println("Request assigned to elevator id: " + optimalElevatorCar.getId());
-            optimalElevatorCar.addStop(floor);
-        }
+        elevatorCar.addStop(floor);
+        System.out.println("Lift " + elevatorCar.getId() + " accepted request for Floor " + floor);
     }
 
-    private int calculateCost(ElevatorCar elevator, int floor, Direction direction) {
-        int distance = Math.abs(floor - elevator.currentFloor);
+    public void submitInternalRequest(int floor) {
+        elevatorCar.addStop(floor);
+    }
+
+    public int calculateCost(int floor, Direction direction) {
+        int distance = Math.abs(floor - elevatorCar.currentFloor);
 
         // Case 1: Same direction
-        if(elevator.state == ElevatorState.MOVING && elevator.direction == direction && isRequestOnPath(elevator, floor, direction)) {
+        if(elevatorCar.state == ElevatorState.MOVING && elevatorCar.direction == direction && isRequestOnPath(floor, direction)) {
             return distance;
         }
 
         // Case 2 : Elevator is IDLE
-        if(elevator.state == ElevatorState.IDLE) {
+        if(elevatorCar.state == ElevatorState.IDLE) {
             return distance;
         }
 
         // CASE 3 : Moving away
-        // return distance + 5000; // added penalty, this approach might work in interviews but is not necessarily correct, real logic is down
-
-        if(elevator.direction == Direction.DOWN) { // target was up
-            return elevator.currentFloor + floor;
+        // return distance + 5000; // added penalty, this approach might work in interviews but is not necessarily correct, real logic is below
+        if(elevatorCar.direction == Direction.DOWN) { // target was up
+            return elevatorCar.currentFloor + floor;
         } else { // target is down
             int topFloor = 10; // hardcoded for now
-            return (topFloor - elevator.currentFloor) + (topFloor - floor);
+            return (topFloor - elevatorCar.currentFloor) + (topFloor - floor);
         }
     }
 
-    private boolean isRequestOnPath(ElevatorCar elevator, int floor, Direction direction) {
+    private boolean isRequestOnPath(int floor, Direction direction) {
         if(direction == Direction.UP) {
-            return floor >= elevator.currentFloor;
+            return floor >= elevatorCar.currentFloor;
         } else {
-            return floor <= elevator.currentFloor;
+            return floor <= elevatorCar.currentFloor;
         }
     }
 
-    public void submitInternalRequest(int floor, ElevatorCar elevator) {
-        elevator.addStop(floor);
-        System.out.println("Internal Request processed for Elevator " + elevator.getId() + " to go to floor " + floor);
-    }
 }
