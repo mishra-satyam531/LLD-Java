@@ -8,7 +8,11 @@ Design a controller and dispatching logic for an elevator system that can handle
 
 ## System Architecture
 
-The project follows a decoupled architecture where the decision-making entity (Dispatcher) is separated from the execution entity (ElevatorCar).
+## 🏗 System Architecture
+
+The system follows a decoupled architecture separating the **decision-making logic** (Dispatchers) from the **execution logic** (Controllers/Cars).
+
+![System Architecture](docs/ElevatorSystem_LLD_Architecture.png)
 
 **Key Features:**
 * **LOOK Algorithm:** Used for elevator scheduling (similar to SCAN but changes direction dynamically) to minimize wait time.
