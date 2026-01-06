@@ -1,5 +1,7 @@
 package ElevatorSystem.models;
 
+import ElevatorSystem.enums.Direction;
+
 public class ElevatorDisplay {
     int floor;
     Direction direction;

@@ -2,9 +2,12 @@ package ElevatorSystem.models;
 
 import java.util.TreeSet;
 
+import ElevatorSystem.enums.Direction;
+import ElevatorSystem.enums.ElevatorState;
+
 public class ElevatorCar {
     private int id;
-    int currentFloor;
+    private int currentFloor;
     Direction direction;
     public ElevatorState state;
     TreeSet<Integer> upStops;
@@ -75,5 +78,13 @@ public class ElevatorCar {
 
     public int getId() {
         return this.id;
+    }
+
+    public int getCurrentFloor() {
+        return this.currentFloor;
+    }
+
+    public Direction getDirection() {
+        return this.getDirection();
     }
 }

@@ -1,4 +1,4 @@
-package ElevatorSystem.models;
+package ElevatorSystem.enums;
 
 public enum ElevatorState {
     MOVING,

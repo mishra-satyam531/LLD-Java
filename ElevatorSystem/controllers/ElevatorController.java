@@ -1,4 +1,7 @@
-package ElevatorSystem.models;
+package ElevatorSystem.controllers;
+
+import ElevatorSystem.enums.*;
+import ElevatorSystem.models.*;
 
 public class ElevatorController {
     public ElevatorCar elevatorCar;
@@ -17,10 +20,10 @@ public class ElevatorController {
     }
 
     public int calculateCost(int floor, Direction direction) {
-        int distance = Math.abs(floor - elevatorCar.currentFloor);
+        int distance = Math.abs(floor - elevatorCar.getCurrentFloor());
 
         // Case 1: Same direction
-        if(elevatorCar.state == ElevatorState.MOVING && elevatorCar.direction == direction && isRequestOnPath(floor, direction)) {
+        if(elevatorCar.state == ElevatorState.MOVING && elevatorCar.getDirection() == direction && isRequestOnPath(floor, direction)) {
             return distance;
         }
 
@@ -31,19 +34,19 @@ public class ElevatorController {
 
         // CASE 3 : Moving away
         // return distance + 5000; // added penalty, this approach might work in interviews but is not necessarily correct, real logic is below
-        if(elevatorCar.direction == Direction.DOWN) { // target was up
-            return elevatorCar.currentFloor + floor;
+        if(elevatorCar.getDirection() == Direction.DOWN) { // target was up
+            return elevatorCar.getCurrentFloor() + floor;
         } else { // target is down
             int topFloor = 10; // hardcoded for now
-            return (topFloor - elevatorCar.currentFloor) + (topFloor - floor);
+            return (topFloor - elevatorCar.getCurrentFloor()) + (topFloor - floor);
         }
     }
 
     private boolean isRequestOnPath(int floor, Direction direction) {
         if(direction == Direction.UP) {
-            return floor >= elevatorCar.currentFloor;
+            return floor >= elevatorCar.getCurrentFloor();
         } else {
-            return floor <= elevatorCar.currentFloor;
+            return floor <= elevatorCar.getCurrentFloor();
         }
     }
 

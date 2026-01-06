@@ -1,7 +1,10 @@
-package ElevatorSystem.models;
+package ElevatorSystem.registry;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ElevatorSystem.models.*;
+import ElevatorSystem.controllers.*;
 
 public class ElevatorCreator {
     public static List<ElevatorController> elevatorControllerList = new ArrayList<>();

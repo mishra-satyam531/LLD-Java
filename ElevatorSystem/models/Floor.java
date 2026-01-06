@@ -1,5 +1,8 @@
 package ElevatorSystem.models;
 
+import ElevatorSystem.enums.*;
+import ElevatorSystem.dispatchers.*;
+
 public class Floor {
     int id;
     ExternalDispatcher externalDispatcher;

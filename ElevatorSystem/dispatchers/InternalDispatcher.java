@@ -1,6 +1,10 @@
-package ElevatorSystem.models;
+package ElevatorSystem.dispatchers;
 
 import java.util.List;
+
+import ElevatorSystem.models.*;
+import ElevatorSystem.controllers.*;
+import ElevatorSystem.registry.*;
 
 public class InternalDispatcher {
     List<ElevatorController> elevatorControllerList = ElevatorCreator.elevatorControllerList;

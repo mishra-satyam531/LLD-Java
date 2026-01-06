@@ -1,5 +1,7 @@
 package ElevatorSystem.models;
 
+import ElevatorSystem.dispatchers.*;
+
 public class InternalButtons {
     InternalDispatcher dispatcher = new InternalDispatcher();
 
