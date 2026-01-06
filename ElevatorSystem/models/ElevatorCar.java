@@ -85,6 +85,6 @@ public class ElevatorCar {
     }
 
     public Direction getDirection() {
-        return this.getDirection();
+        return this.direction;
     }
 }
