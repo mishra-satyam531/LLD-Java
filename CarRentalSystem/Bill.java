@@ -7,17 +7,19 @@ public class Bill {
 
     public Bill(Reservation reservation) {
         this.reservation = reservation;
-        this.totalAmount = computeAmout();
+        this.totalAmount = computeAmount();
         this.isPaid = false;
     }
     
 
-    private double computeAmout() {
+    private double computeAmount() {
         long diff = reservation.getDateBookedTo().getTime() - reservation.getDateBookedFrom().getTime();
 
-        long days = diff / (1000 * 60 * 60 * 24);
-        double amount = days * 1000.0;
-
+        double days = (double) diff / (1000 * 60 * 60 * 24);
+        
+        double billableDays = Math.ceil(days);
+        
+        double amount = billableDays * 1000.0;
         return amount;
     }
 

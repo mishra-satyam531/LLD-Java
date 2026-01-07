@@ -50,7 +50,7 @@ public class Store {
             }
         }
 
-        Reservation newReservation = new Reservation(user, vehicle, toDate, toDate, toDate, ReservationStatus.SCHEDULED);
+        Reservation newReservation = new Reservation(user, vehicle, new Date(), fromDate, toDate, ReservationStatus.SCHEDULED);
 
         reservationList.add(newReservation);
         System.out.println("Booking Successful for Vehicle: " + vehicle.getVehicleNo());
