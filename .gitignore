@@ -1,0 +1,12 @@
+# The Java compiled files (The big one)
+*.class
+
+# The Folder where VS Code puts compiled files
+bin/
+out/
+
+# VS Code personal settings
+.vscode/
+
+# Mac OS junk
+.DS_Store
