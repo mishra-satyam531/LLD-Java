@@ -1,4 +1,4 @@
-package CarRentalSystem;
+package CarRentalSystem.enums;
 
 public enum VehicleType {
     CAR,

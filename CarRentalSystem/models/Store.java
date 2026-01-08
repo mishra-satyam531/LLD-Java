@@ -1,9 +1,13 @@
-package CarRentalSystem;
+package CarRentalSystem.models;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+import CarRentalSystem.enums.ReservationStatus;
+import CarRentalSystem.enums.VehicleType;
+import CarRentalSystem.service.VehicleInventoryManagement;
 
 public class Store {
     private int storeId;
@@ -53,7 +57,6 @@ public class Store {
         Reservation newReservation = new Reservation(user, vehicle, new Date(), fromDate, toDate, ReservationStatus.SCHEDULED);
 
         reservationList.add(newReservation);
-        System.out.println("Booking Successful for Vehicle: " + vehicle.getVehicleNo());
         return newReservation;
     }
 

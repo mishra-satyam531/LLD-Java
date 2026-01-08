@@ -1,4 +1,7 @@
-package CarRentalSystem;
+package CarRentalSystem.models;
+
+import CarRentalSystem.enums.Status;
+import CarRentalSystem.enums.VehicleType;
 
 public class Vehicle {
     private int id;

@@ -1,7 +1,11 @@
-package CarRentalSystem;
+package CarRentalSystem.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import CarRentalSystem.models.Location;
+import CarRentalSystem.models.Store;
+import CarRentalSystem.models.User;
 
 public class VehicleRentalSystem {
     private List<Store> storesList;

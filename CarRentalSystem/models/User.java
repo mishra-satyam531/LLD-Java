@@ -1,4 +1,4 @@
-package CarRentalSystem;
+package CarRentalSystem.models;
 
 public class User {
     private int userId;

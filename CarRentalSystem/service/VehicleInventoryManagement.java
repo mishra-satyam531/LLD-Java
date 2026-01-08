@@ -1,6 +1,8 @@
-package CarRentalSystem;
+package CarRentalSystem.service;
 
 import java.util.Map;
+
+import CarRentalSystem.models.Vehicle;
 
 public class VehicleInventoryManagement {
     private Map<Integer, Vehicle> vehicleMap;

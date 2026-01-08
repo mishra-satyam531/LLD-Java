@@ -1,6 +1,8 @@
-package CarRentalSystem;
+package CarRentalSystem.models;
 
 import java.util.Date;
+
+import CarRentalSystem.enums.ReservationStatus;
 
 public class Reservation {
     private static int idCounter = 2024001; // Static counter to auto-generate unique IDs
@@ -25,13 +27,13 @@ public class Reservation {
     }
 
     public int getReservationId() {
-            return reservationId;
-        }
+        return reservationId;
+    }
 
-        public User getUser() { return user; }
-        public Vehicle getVehicle() { return vehicle; }
-        public Date getBookingDate() { return bookingDate; }
-        public Date getDateBookedFrom() { return dateBookedFrom; }
-        public Date getDateBookedTo() { return dateBookedTo; }
-        public ReservationStatus getStatus() { return reservationStatus; }
+    public User getUser() { return user; }
+    public Vehicle getVehicle() { return vehicle; }
+    public Date getBookingDate() { return bookingDate; }
+    public Date getDateBookedFrom() { return dateBookedFrom; }
+    public Date getDateBookedTo() { return dateBookedTo; }
+    public ReservationStatus getStatus() { return reservationStatus; }
 }

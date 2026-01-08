@@ -1,4 +1,4 @@
-package CarRentalSystem;
+package CarRentalSystem.enums;
 
 public enum ReservationStatus {
     SCHEDULED,
