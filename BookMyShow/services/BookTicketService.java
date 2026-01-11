@@ -1,13 +1,17 @@
 package BookMyShow.services;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import BookMyShow.controllers.TheatreController;
 import BookMyShow.enums.City;
+import BookMyShow.models.Booking;
 import BookMyShow.models.Screen;
 import BookMyShow.models.Show;
 import BookMyShow.models.Theatre;
+import BookMyShow.models.User;
 
 public class BookTicketService {
     private TheatreController theatreController;
@@ -35,4 +39,19 @@ public class BookTicketService {
 
         return requiresShowsList;
     }
+
+    // public Booking bookTicket(int userId, Show show, List<Integer> seatIds) {
+    //     List<Integer> alreadyBookedSeats = show.getBookedSeatIds();
+    //     Set<Integer> alreadyBookedSeatsSet = new HashSet<>(alreadyBookedSeats);
+    //     for(int id : seatIds) {
+    //         System.out.println("Booking Failed: Seat " + id + " is already booked.");
+    //         if(alreadyBookedSeats.contains(id)) {
+    //             return null;
+    //         }
+    //     }
+
+    //     alreadyBookedSeats.addAll(seatIds);
+
+    //     User user = new User("Guest User", 25, userId);
+    // }
 }
