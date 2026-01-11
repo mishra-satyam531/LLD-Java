@@ -9,6 +9,7 @@ public class Theatre {
     private String address;
     private City city;
     private List<Screen> screens;
+    
     public Theatre(int theatreId, String address, City city, List<Screen> screens) {
         this.theatreId = theatreId;
         this.address = address;
