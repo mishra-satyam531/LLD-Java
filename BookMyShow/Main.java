@@ -7,11 +7,13 @@ import BookMyShow.controllers.MovieController;
 import BookMyShow.controllers.TheatreController;
 import BookMyShow.enums.City;
 import BookMyShow.enums.SeatType;
+import BookMyShow.models.Booking;
 import BookMyShow.models.Movie;
 import BookMyShow.models.Screen;
 import BookMyShow.models.Seat;
 import BookMyShow.models.Show;
 import BookMyShow.models.Theatre;
+import BookMyShow.services.BookTicketService;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,5 +41,32 @@ public class Main {
 
         movieController.setCityVsMovies(City.DELHI, avengersEndgame);
         theatreController.setcityVsTheatres(City.DELHI, theatre);
+
+        BookTicketService brokerage = new BookTicketService(theatreController);
+
+        // User searches for "Avengers Endgame" in Delhi
+        System.out.println("Searching for Avengers in Delhi...");
+        List<Show> results = brokerage.getShowsForMovie(City.DELHI, "Avengers Endgame");
+
+        if(results.isEmpty()) {
+            System.out.println("No shows found!");
+        } else {
+            // User selects the first show found
+            Show selectedShow = results.get(0);
+            System.out.println("Found show: " + selectedShow.getShowId());
+
+            // User tries to book Seat IDs 101 and 201
+            List<Integer> seatsToBook = new ArrayList<>();
+            seatsToBook.add(101);
+            seatsToBook.add(201);
+
+            Booking booking = brokerage.bookTicket(1, selectedShow, seatsToBook);
+            if(booking != null) {
+                System.out.println("Booking Successful! ID: " + booking.getBookingId());
+                System.out.println("Status: " + booking.getStatus());
+            } else {
+                System.out.println("Booking Failed.");
+            }
+        }
     }
 }

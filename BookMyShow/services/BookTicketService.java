@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.Set;
 
 import BookMyShow.controllers.TheatreController;
+import BookMyShow.enums.BookingStatus;
 import BookMyShow.enums.City;
 import BookMyShow.models.Booking;
 import BookMyShow.models.Screen;
+import BookMyShow.models.Seat;
 import BookMyShow.models.Show;
 import BookMyShow.models.Theatre;
 import BookMyShow.models.User;
@@ -40,18 +42,29 @@ public class BookTicketService {
         return requiresShowsList;
     }
 
-    // public Booking bookTicket(int userId, Show show, List<Integer> seatIds) {
-    //     List<Integer> alreadyBookedSeats = show.getBookedSeatIds();
-    //     Set<Integer> alreadyBookedSeatsSet = new HashSet<>(alreadyBookedSeats);
-    //     for(int id : seatIds) {
-    //         System.out.println("Booking Failed: Seat " + id + " is already booked.");
-    //         if(alreadyBookedSeats.contains(id)) {
-    //             return null;
-    //         }
-    //     }
+    public Booking bookTicket(int userId, Show show, List<Integer> seatIds) {
+        List<Integer> alreadyBookedSeats = show.getBookedSeatIds();
+        Set<Integer> alreadyBookedSeatsSet = new HashSet<>(alreadyBookedSeats);
+        for(int id : seatIds) {
+            if(alreadyBookedSeats.contains(id)) {
+                System.out.println("Booking Failed: Seat " + id + " is already booked.");
+                return null;
+            }
+        }
 
-    //     alreadyBookedSeats.addAll(seatIds);
+        show.addBookedSeats(seatIds);
 
-    //     User user = new User("Guest User", 25, userId);
-    // }
+        List<Seat> myBookedSeats = new ArrayList<>();
+        for(Seat seat : show.getScreen().getSeats()) {
+            if(seatIds.contains(seat.getSeatId())) {
+                myBookedSeats.add(seat);
+            }
+        }
+
+        User user = new User("Guest User", 25, userId);
+
+        Booking booking = new Booking(1234, show, user, myBookedSeats,  550 * seatIds.size(), BookingStatus.CONFIRMED);
+
+        return booking;
+    }
 }
