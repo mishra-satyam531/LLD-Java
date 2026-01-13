@@ -14,6 +14,7 @@ import BookMyShow.models.Seat;
 import BookMyShow.models.Show;
 import BookMyShow.models.Theatre;
 import BookMyShow.models.User;
+import BookMyShow.strategies.PaymentStrategy;
 
 public class BookTicketService {
     private TheatreController theatreController;
@@ -46,7 +47,7 @@ public class BookTicketService {
         List<Integer> alreadyBookedSeats = show.getBookedSeatIds();
         Set<Integer> alreadyBookedSeatsSet = new HashSet<>(alreadyBookedSeats);
         for(int id : seatIds) {
-            if(alreadyBookedSeats.contains(id)) {
+            if(alreadyBookedSeatsSet.contains(id)) {
                 System.out.println("Booking Failed: Seat " + id + " is already booked.");
                 return null;
             }
@@ -63,8 +64,14 @@ public class BookTicketService {
 
         User user = new User("Guest User", 25, userId);
 
-        Booking booking = new Booking(1234, show, user, myBookedSeats,  550 * seatIds.size(), BookingStatus.CONFIRMED);
+        Booking booking = new Booking(1234, show, user, myBookedSeats,  550 * seatIds.size(), BookingStatus.PENDING);
 
         return booking;
+    }
+
+    public void makeBookingPayment(Booking booking, PaymentStrategy paymentMethod) {
+        paymentMethod.pay(booking.getAmount());
+        booking.setStatus(BookingStatus.CONFIRMED);
+        System.out.println("Congratulations, you ticket is booked!");
     }
 }

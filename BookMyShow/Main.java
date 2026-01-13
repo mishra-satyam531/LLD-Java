@@ -14,6 +14,8 @@ import BookMyShow.models.Seat;
 import BookMyShow.models.Show;
 import BookMyShow.models.Theatre;
 import BookMyShow.services.BookTicketService;
+import BookMyShow.strategies.PaymentStrategy;
+import BookMyShow.strategies.UpiPaymentService;
 
 public class Main {
     public static void main(String[] args) {
@@ -62,8 +64,16 @@ public class Main {
 
             Booking booking = brokerage.bookTicket(1, selectedShow, seatsToBook);
             if(booking != null) {
-                System.out.println("Booking Successful! ID: " + booking.getBookingId());
-                System.out.println("Status: " + booking.getStatus());
+                System.out.println("Booking Created! ID: " + booking.getBookingId());
+                System.out.println("Current Status: " + booking.getStatus());
+
+                // User decides to pay via UPI
+                System.out.println("\nInitiating Payment...");
+                PaymentStrategy upiPayment = new UpiPaymentService();
+
+                brokerage.makeBookingPayment(booking, upiPayment);
+
+                System.out.println("Final Status: " + booking.getStatus());
             } else {
                 System.out.println("Booking Failed.");
             }
