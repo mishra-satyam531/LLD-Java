@@ -1,9 +1,9 @@
-package VendingMachine;
+package VendingMachine.model;
 
 public class ItemShelf {
-    int code;
-    Item item;
-    boolean soldOut;
+    private int code;
+    private Item item;
+    private boolean soldOut;
 
     public ItemShelf(int code, Item item, boolean soldOut) {
         this.code = code;

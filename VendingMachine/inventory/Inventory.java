@@ -1,4 +1,7 @@
-package VendingMachine;
+package VendingMachine.inventory;
+
+import VendingMachine.model.Item;
+import VendingMachine.model.ItemShelf;
 
 public class Inventory {
     ItemShelf[] inventory = null;
@@ -18,7 +21,7 @@ public class Inventory {
 
     public void addItem(Item item, int codeNumber) throws Exception {
         for(ItemShelf itemShelf : inventory)  {
-            if(itemShelf.code == codeNumber) {
+            if(itemShelf.getCode() == codeNumber) {
                 if(itemShelf.isSoldOut()) {
                     itemShelf.setItem(item);
                     itemShelf.setSoldOut(false);
@@ -32,11 +35,11 @@ public class Inventory {
 
     public Item getItem(int codeNumber) throws Exception {
         for(ItemShelf itemShelf : inventory) {
-            if(itemShelf.code == codeNumber) {
+            if(itemShelf.getCode() == codeNumber) {
                 if(itemShelf.isSoldOut()) {
                     throw new Exception("Item is already sold out");
                 } else {
-                    return itemShelf.item;
+                    return itemShelf.getItem();
                 }
             }
         }
@@ -45,7 +48,7 @@ public class Inventory {
 
     public void soldOutItem(int codeNumber) {
         for(ItemShelf itemShelf : inventory) {
-            if(itemShelf.code == codeNumber) {
+            if(itemShelf.getCode() == codeNumber) {
                 itemShelf.setSoldOut(true);
             }
         }

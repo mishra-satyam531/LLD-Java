@@ -1,4 +1,7 @@
-package VendingMachine;
+package VendingMachine.state;
+
+import VendingMachine.VendingMachine;
+import VendingMachine.model.Item;
 
 public class DispenseState implements VendingMachineState {
     private VendingMachine machine;

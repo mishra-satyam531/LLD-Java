@@ -1,4 +1,6 @@
-package VendingMachine;
+package VendingMachine.state;
+
+import VendingMachine.VendingMachine;
 
 public class IdleState implements VendingMachineState {
     public IdleState() {

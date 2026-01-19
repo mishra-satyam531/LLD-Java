@@ -1,4 +1,4 @@
-package VendingMachine;
+package VendingMachine.model;
 
 public class Item {
     private ItemType type;

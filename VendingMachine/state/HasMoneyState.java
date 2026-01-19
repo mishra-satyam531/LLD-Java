@@ -1,7 +1,10 @@
-package VendingMachine;
+package VendingMachine.state;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import VendingMachine.VendingMachine;
+import VendingMachine.model.Coin;
 
 public class HasMoneyState implements VendingMachineState {
     public HasMoneyState() {

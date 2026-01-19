@@ -1,4 +1,4 @@
-package VendingMachine;
+package VendingMachine.model;
 public enum Coin {
     PENNY(1),
     NICKEL(5),

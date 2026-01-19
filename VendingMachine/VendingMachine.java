@@ -3,6 +3,11 @@ package VendingMachine;
 import java.util.ArrayList;
 import java.util.List;
 
+import VendingMachine.inventory.Inventory;
+import VendingMachine.model.Coin;
+import VendingMachine.state.IdleState;
+import VendingMachine.state.VendingMachineState;
+
 public class VendingMachine {
     private VendingMachineState state;
     private Inventory inventory;

@@ -1,6 +1,10 @@
-package VendingMachine;
+package VendingMachine.state;
 
 import java.util.List;
+
+import VendingMachine.VendingMachine;
+import VendingMachine.model.Coin;
+import VendingMachine.model.Item;
 
 public interface VendingMachineState {
     default public void clickOnInsertCoinButton(VendingMachine machine) {

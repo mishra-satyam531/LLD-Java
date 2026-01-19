@@ -1,7 +1,11 @@
-package VendingMachine;
+package VendingMachine.state;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import VendingMachine.VendingMachine;
+import VendingMachine.model.Coin;
+import VendingMachine.model.Item;
 
 public class SelectionState implements VendingMachineState {
     public SelectionState() {
