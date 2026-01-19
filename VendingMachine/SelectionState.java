@@ -29,6 +29,7 @@ public class SelectionState implements VendingMachineState {
                 }
 
                 machine.setState(new DispenseState(machine, codeNumber));
+                machine.getState().dispenseProduct(machine, codeNumber);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

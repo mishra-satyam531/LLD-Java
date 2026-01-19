@@ -23,7 +23,8 @@ public interface VendingMachineState {
         return 0;
     }
 
-    default public Item dispenseProduct(int returnChangeMoney) {
+    default public Item dispenseProduct(VendingMachine machine, int codeNumber) {
+        System.out.println("You cannot dispense product now");
         return null;
     }
 
