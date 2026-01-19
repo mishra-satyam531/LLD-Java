@@ -4,7 +4,7 @@ import VendingMachine.model.Item;
 import VendingMachine.model.ItemShelf;
 
 public class Inventory {
-    ItemShelf[] inventory = null;
+    ItemShelf[] inventory;
     public Inventory(int itemCount) {
         inventory = new ItemShelf[itemCount];
         initialEmptyInventory();
