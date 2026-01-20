@@ -32,7 +32,7 @@ public class SelectionState implements VendingMachineState {
                     getChange(paidByUser - item.getPrice());
                 }
 
-                machine.setState(new DispenseState(machine, codeNumber));
+                machine.setState(new DispenseState());
                 machine.getState().dispenseProduct(machine, codeNumber);
             }
         } catch (Exception e) {

@@ -6,13 +6,8 @@ import VendingMachine.VendingMachine;
 import VendingMachine.model.Item;
 
 public class DispenseState implements VendingMachineState {
-    private VendingMachine machine;
-    private int codeNumber;
-
-    public DispenseState(VendingMachine machine, int codeNumber) {
+    public DispenseState() {
         System.out.println("Machine is in DispenseState");
-        this.machine = machine;
-        this.codeNumber = codeNumber;
     }
 
     @Override
