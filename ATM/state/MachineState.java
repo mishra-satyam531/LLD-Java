@@ -17,7 +17,7 @@ public interface MachineState {
         System.out.println("OOPS!! Something went wrong");
     }
     
-    default public void cashWithdrawal(ATM atm, Card card, int withdrawAmount) {
+    default public void cashWithdrawal(ATM atm, Card card, int withdrawAmount) throws Exception {
         System.out.println("OOPS!! Something went wrong");
     }
     
