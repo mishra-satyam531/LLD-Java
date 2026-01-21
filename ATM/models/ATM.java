@@ -1,22 +1,21 @@
 package ATM.models;
 
 import ATM.state.MachineState;
+import ATM.state.IdleState;
 
 public class ATM {
     private MachineState state;
-    private int atmBalance;
     private int numOfTwoThousandNotes;
     private int numOfFiveHundredNotes;
     private int numOfTwoHundredNotes;
     private int numOfOneHundredNotes;
 
-    public ATM(MachineState state, int atmBalance, int numOfTwoThousandNotes, int numOfFiveHundredNotes, int numOfTwoHundredNotes, int numOfOneHundredNotes) {
-        this.state = state;
+    public ATM(int numOfTwoThousandNotes, int numOfFiveHundredNotes, int numOfTwoHundredNotes, int numOfOneHundredNotes) {
+        this.state = new IdleState();
         this.numOfTwoThousandNotes = numOfTwoThousandNotes;
         this.numOfFiveHundredNotes = numOfFiveHundredNotes;
         this.numOfTwoHundredNotes = numOfTwoHundredNotes;
         this.numOfOneHundredNotes = numOfOneHundredNotes;
-        this.atmBalance = 2000 * numOfTwoThousandNotes + 500 * numOfFiveHundredNotes + 200 * numOfTwoHundredNotes + 100 * numOfOneHundredNotes;
     }
 
     public MachineState getState() {
@@ -28,11 +27,7 @@ public class ATM {
     }
 
     public int getAtmBalance() {
-        return atmBalance;
-    }
-
-    public void setAtmBalance(int atmBalance) {
-        this.atmBalance = atmBalance;
+        return 2000 * numOfTwoThousandNotes + 500 * numOfFiveHundredNotes + 200 * numOfTwoHundredNotes + 100 * numOfOneHundredNotes;
     }
 
     public int getNumOfTwoThousandNotes() {
