@@ -39,7 +39,7 @@ ATM/
 └── Main.java               # Entry point / Simulation
 ```
 
-## ⚙️ How It Works
+## How It Works
 
 1.  **Initialization**: The ATM is loaded with a specific count of notes (2000s, 500s, 200s, 100s).
 2.  **Authentication**: User inserts card and enters PIN (validated against `Card` object).
@@ -66,6 +66,7 @@ atm.getState().insertCard(atm, card);
 atm.getState().authenticatePin(atm, card, 1564);
 atm.getState().selectOperation(atm, card, TransactionType.CASH_WITHDRAWAL);
 atm.getState().cashWithdrawal(atm, card, 5000);
+```
 
 ### Console Output
 ```text
@@ -74,3 +75,4 @@ Card is inserted
 PIN entered is correct
 Please collect your cash
 Updated ATM balance: 14000
+```
