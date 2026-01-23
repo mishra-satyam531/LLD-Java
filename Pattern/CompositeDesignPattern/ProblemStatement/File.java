@@ -1,4 +1,4 @@
-package Pattern.CompositeDesignPattern;
+package Pattern.CompositeDesignPattern.ProblemStatement;
 
 public class File {
     String fileName;
