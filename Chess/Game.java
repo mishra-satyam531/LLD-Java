@@ -57,7 +57,7 @@ public class Game {
             return false;
         }
 
-        if (!sourcePiece.canMove(board, startBox, endBox)) {
+        if(!sourcePiece.canMove(board, startBox, endBox)) {
             return false;
         }
 
