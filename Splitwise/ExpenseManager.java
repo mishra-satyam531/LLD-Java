@@ -87,4 +87,36 @@ public class ExpenseManager {
             paidTo.getBalances().put(paidBy.getUserId(), paidTo.getBalances().getOrDefault(paidBy.getUserId(), (double) 0) - amount);
         }
     }
+
+    public void showBalance(String userId) {
+        // 1. Validations
+        if (!userMap.containsKey(userId)) {
+            System.out.println("User does not exist");
+            return;
+        }
+        
+        User user = userMap.get(userId);
+        Map<String, Double> balances = user.getBalances();
+
+        boolean isEmpty = true;
+        for (Map.Entry<String, Double> entry : balances.entrySet()) {
+            String friendId = entry.getKey();
+            double amount = entry.getValue();
+            
+            if (amount == 0) continue;
+
+            isEmpty = false;
+            User friend = userMap.get(friendId);
+
+            if (amount > 0) {
+                System.out.println(friend.getUserName() + " owes " + user.getUserName() + ": " + amount);
+            } else {
+                System.out.println(user.getUserName() + " owes " + friend.getUserName() + ": " + Math.abs(amount));
+            }
+        }
+
+        if (isEmpty) {
+            System.out.println("No balances for " + user.getUserName());
+        }
+    }
 }
