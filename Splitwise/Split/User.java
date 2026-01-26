@@ -1,32 +1,32 @@
 package Splitwise.Split;
 
-import java.util.HashMap;
-import java.util.Map;
+import Splitwise.UserExpenseBalanceSheet;
 
 public class User {
     private String userName;
     private String userId;
-    private Map<String, Double> balances;
+    private UserExpenseBalanceSheet userExpenseBalanceSheet;
+
     public User(String userName, String userId) {
         this.userName = userName;
         this.userId = userId;
-        balances = new HashMap<>();
+        this.userExpenseBalanceSheet = new UserExpenseBalanceSheet();
     }
 
     public String getUserName() {
         return userName;
     }
-    
+
     public String getUserId() {
         return userId;
     }
-    
-    public Map<String, Double> getBalances() {
-        return balances;
+
+    public UserExpenseBalanceSheet getUserExpenseBalanceSheet() {
+        return userExpenseBalanceSheet;
     }
 
-    public void setBalances(String userId, double amount) {
-        balances.put(userId, amount);
+    public void setUserExpenseBalanceSheet(UserExpenseBalanceSheet userExpenseBalanceSheet) {
+        this.userExpenseBalanceSheet = userExpenseBalanceSheet;
     }
-    
+
 }
