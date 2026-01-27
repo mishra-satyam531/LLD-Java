@@ -3,10 +3,15 @@ package Splitwise;
 import java.util.ArrayList;
 import java.util.List;
 
+import Splitwise.Controllers.BalanceSheetController;
+import Splitwise.Controllers.ExpenseController;
+import Splitwise.Controllers.GroupController;
+import Splitwise.Controllers.UserController;
 import Splitwise.Enums.ExpenseType;
+import Splitwise.Models.Group;
+import Splitwise.Models.User;
 import Splitwise.Split.EqualSplit;
 import Splitwise.Split.Split;
-import Splitwise.Split.User;
 
 public class Splitwise {
     private UserController userController;

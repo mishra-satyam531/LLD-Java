@@ -1,4 +1,4 @@
-package Splitwise;
+package Splitwise.Controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import Splitwise.Expense.EqualExpense;
 import Splitwise.Expense.ExactExpense;
 import Splitwise.Expense.Expense;
 import Splitwise.Expense.PercentExpense;
+import Splitwise.Models.User;
 import Splitwise.Split.PercentSplit;
 import Splitwise.Split.Split;
-import Splitwise.Split.User;
 
 public class ExpenseController {
     BalanceSheetController balanceSheetController;

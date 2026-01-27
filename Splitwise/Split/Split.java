@@ -1,5 +1,7 @@
 package Splitwise.Split;
 
+import Splitwise.Models.User;
+
 public abstract class Split {
     private User user;
     protected double amount;

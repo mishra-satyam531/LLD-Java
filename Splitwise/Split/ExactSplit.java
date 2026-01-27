@@ -1,5 +1,7 @@
 package Splitwise.Split;
 
+import Splitwise.Models.User;
+
 public class ExactSplit extends Split {
     
     public ExactSplit(User user, double amount) {

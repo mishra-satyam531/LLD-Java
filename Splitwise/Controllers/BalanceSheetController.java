@@ -1,10 +1,12 @@
-package Splitwise;
+package Splitwise.Controllers;
 
 import java.util.List;
 import java.util.Map;
 
+import Splitwise.Models.Balance;
+import Splitwise.Models.User;
+import Splitwise.Models.UserExpenseBalanceSheet;
 import Splitwise.Split.Split;
-import Splitwise.Split.User;
 
 public class BalanceSheetController {
     public void updateUserExpenseBalanceSheet(User expensePaidBy, List<Split> splits, double totalExpenseAmount) {
@@ -54,7 +56,6 @@ public class BalanceSheetController {
             String friendId = entry.getKey();
             Balance balance = entry.getValue();
             
-            // Skip zero balances
             if (balance.getAmount() == 0) {
                 continue;
             }

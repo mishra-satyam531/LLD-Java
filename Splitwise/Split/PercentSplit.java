@@ -1,5 +1,7 @@
 package Splitwise.Split;
 
+import Splitwise.Models.User;
+
 public class PercentSplit extends Split {
     private double percentage;
     

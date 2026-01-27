@@ -2,9 +2,9 @@ package Splitwise.Expense;
 
 import java.util.List;
 
+import Splitwise.Models.User;
 import Splitwise.Split.PercentSplit;
 import Splitwise.Split.Split;
-import Splitwise.Split.User;
 
 public class PercentExpense extends Expense {
 

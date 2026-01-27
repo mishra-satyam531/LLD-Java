@@ -1,4 +1,4 @@
-package Splitwise;
+package Splitwise.Models;
 
 public class Balance {
     private double amount;

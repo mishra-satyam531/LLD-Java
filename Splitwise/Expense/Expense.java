@@ -2,8 +2,8 @@ package Splitwise.Expense;
 
 import java.util.List;
 
+import Splitwise.Models.User;
 import Splitwise.Split.Split;
-import Splitwise.Split.User;
 
 public abstract class Expense {
     private String id;

@@ -1,6 +1,4 @@
-package Splitwise.Split;
-
-import Splitwise.UserExpenseBalanceSheet;
+package Splitwise.Models;
 
 public class User {
     private String userName;

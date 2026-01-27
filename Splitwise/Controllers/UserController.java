@@ -1,9 +1,9 @@
-package Splitwise;
+package Splitwise.Controllers;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Splitwise.Split.User;
+import Splitwise.Models.User;
 
 public class UserController {
     List<User> userList;
