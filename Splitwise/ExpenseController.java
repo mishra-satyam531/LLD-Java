@@ -8,6 +8,7 @@ import Splitwise.Expense.EqualExpense;
 import Splitwise.Expense.ExactExpense;
 import Splitwise.Expense.Expense;
 import Splitwise.Expense.PercentExpense;
+import Splitwise.Split.PercentSplit;
 import Splitwise.Split.Split;
 import Splitwise.Split.User;
 
@@ -40,6 +41,11 @@ public class ExpenseController {
                 
             case PERCENT:
                 for(Split split : splitDetails) {
+                    PercentSplit pSplit = (PercentSplit) split; 
+                    
+                    double share = (expenseAmount * pSplit.getPercentage()) / 100.0;
+                    
+                    split.setAmount(share);
                 }
                 expense = new PercentExpense(expenseId, expenseAmount, paidBy, splitDetails);
                 break;

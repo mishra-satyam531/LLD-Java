@@ -1,7 +1,5 @@
 package Splitwise;
 
-import java.util.Map;
-
 public class Balance {
     private double amount;
     private double amountOwe;
@@ -35,33 +33,6 @@ public class Balance {
 
     public void setAmountGetBack(double amountGetBack) {
         this.amountGetBack = amountGetBack;
-    }
-
-    public void showBalance(UserExpenseBalanceSheet userExpenseBalanceSheet) {
-        System.out.println("---------------------------------------");
-        
-        boolean isEmpty = true;
-        
-        for (Map.Entry<String, Balance> entry : userExpenseBalanceSheet.getUserVsBalance().entrySet()) {
-            String friendId = entry.getKey();
-            Balance balance = entry.getValue();
-            
-            if (balance.getAmount() == 0) {
-                continue;
-            }
-
-            isEmpty = false;
-            
-            if (balance.getAmount() > 0) {
-                System.out.println(friendId + " owes you: " + balance.getAmount());
-            } else {
-                System.out.println("You owe " + friendId + ": " + Math.abs(balance.getAmount()));
-            }
-        }
-
-        if (isEmpty) {
-            System.out.println("No balances found.");
-        }
     }
 
 }

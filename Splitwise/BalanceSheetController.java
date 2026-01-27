@@ -46,7 +46,30 @@ public class BalanceSheetController {
     }
 
     public void showBalance(UserExpenseBalanceSheet userExpenseBalanceSheet) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'showBalance'");
+        System.out.println("---------------------------------------");
+        
+        boolean isEmpty = true;
+        
+        for (Map.Entry<String, Balance> entry : userExpenseBalanceSheet.getUserVsBalance().entrySet()) {
+            String friendId = entry.getKey();
+            Balance balance = entry.getValue();
+            
+            // Skip zero balances
+            if (balance.getAmount() == 0) {
+                continue;
+            }
+
+            isEmpty = false;
+            
+            if (balance.getAmount() > 0) {
+                System.out.println(friendId + " owes you: " + balance.getAmount());
+            } else {
+                System.out.println("You owe " + friendId + ": " + Math.abs(balance.getAmount()));
+            }
+        }
+
+        if (isEmpty) {
+            System.out.println("No balances found.");
+        }
     }
 }

@@ -49,8 +49,8 @@ public class Splitwise {
     }
 
     private void addUsersToSystem() {
-        userController.addUser(new User("U2001", "User1"));
-        userController.addUser(new User("U2002", "User2"));
-        userController.addUser(new User("U2003", "User3"));
+        userController.addUser(new User("User1", "U2001")); 
+        userController.addUser(new User("User2", "U2002"));
+        userController.addUser(new User("User3", "U2003"));
     }
 }
