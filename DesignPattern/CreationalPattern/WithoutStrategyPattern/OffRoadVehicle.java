@@ -1,4 +1,4 @@
-package DesignPattern.CreationalPattern.WithoutStrategyPattern;
+package DesignPattern.creationalPattern.WithoutStrategyPattern;
 
 public class OffRoadVehicle extends Vehicle {
     @Override

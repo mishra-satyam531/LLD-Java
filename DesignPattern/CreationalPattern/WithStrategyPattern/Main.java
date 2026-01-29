@@ -1,4 +1,4 @@
-package DesignPattern.CreationalPattern.WithStrategyPattern;
+package DesignPattern.creationalPattern.WithStrategyPattern;
 
 public class Main {
     public static void main(String[] args) {

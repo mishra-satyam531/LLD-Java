@@ -1,6 +1,6 @@
-package DesignPattern.CreationalPattern.WithStrategyPattern;
+package DesignPattern.creationalPattern.WithStrategyPattern;
 
-import DesignPattern.CreationalPattern.WithStrategyPattern.Strategy.DriveStrategy;
+import DesignPattern.creationalPattern.WithStrategyPattern.Strategy.DriveStrategy;
 
 public class Vehicle {
     DriveStrategy driveObject;

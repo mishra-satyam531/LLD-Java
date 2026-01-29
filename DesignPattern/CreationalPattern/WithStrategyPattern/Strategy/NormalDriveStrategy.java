@@ -1,4 +1,4 @@
-package DesignPattern.CreationalPattern.WithStrategyPattern.Strategy;
+package DesignPattern.creationalPattern.WithStrategyPattern.Strategy;
 
 public class NormalDriveStrategy implements DriveStrategy {
 

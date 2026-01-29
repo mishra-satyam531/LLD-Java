@@ -1,9 +1,9 @@
-package DesignPattern.CreationalPattern.ObserverPattern.Observable;
+package DesignPattern.creationalPattern.ObserverPattern.Observable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import DesignPattern.CreationalPattern.ObserverPattern.Observer.NotificationAlertObserver;
+import DesignPattern.creationalPattern.ObserverPattern.Observer.NotificationAlertObserver;
 
 public class IphoneObservableImpl implements StocksObservable {
     public List<NotificationAlertObserver> observerList = new ArrayList<>();
